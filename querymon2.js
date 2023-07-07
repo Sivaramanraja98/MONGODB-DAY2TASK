@@ -129,13 +129,13 @@ db.attendance.aggregate([
       $match: {
         $and: [
           {
-            $or: [
+            $and: [
               { "topics.topic_date": { $gte: new Date("15-oct-2020") } },
               { "topics.topic_date": { $lte: new Date("31-oct-2020") } },
             ],
           },
           {
-            $or: [
+            $and: [
               { "tasks.due_date": { $gte: new Date("15-oct-2020") } },
               { "tasks.due_date": { $lte: new Date("31-oct-2020") } },
             ],
